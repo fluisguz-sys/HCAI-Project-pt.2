@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlotte Alliance for Systemic Housing & AI Innovation</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        sage: {
+                            50: '#f4f7f5',
+                            100: '#e3eae5',
+                            200: '#c5d5cb',
+                            700: '#435e4d',
+                            800: '#2d4234'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #059669 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-emerald-200">
+                        CLT
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-emerald-900 block leading-tight">HomeFront CLT</span>
+                        <span class="text-xs text-emerald-600 font-medium tracking-wide uppercase">AI & Systemic Housing Alliance</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#mirror-test" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors">The Mirror Test</a>
+                    <a href="#ai-strategy" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors">AI & Systems</a>
+                    <a href="#opportunities" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors">Get Involved Near You</a>
+                    <a href="#impact" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors">Local Ecosystem</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button onclick="openDonateModal()" class="px-5 py-2.5 rounded-full bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-all shadow-md hover:shadow-lg shadow-emerald-200 flex items-center gap-2">
+                        <i class="fa-solid fa-heart text-emerald-200">="true"</i>
+                        <span>Support the Cause</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-20 lg:py-28 relative overflow-hidden">
+        <!-- Abstract Geometric Background Shapes -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-emerald-400 opacity-10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-emerald-300 opacity-10 blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-800/80 border border-emerald-500/30 text-emerald-200 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Charlotte-Mecklenburg Systemic Initiative
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Ending Homelessness isn't a project. <br class="hidden sm:inline"/>
+                        <span class="text-emerald-300">It’s a Structural War.</span>
+                    </h1>
+                    <p class="text-lg text-emerald-100 max-w-2xl leading-relaxed font-light">
+                        Combining intelligent data analytics, legislative zoning reform, and proven Housing First strategies across Queen City neighborhoods.
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#mirror-test" class="px-7 py-3.5 rounded-xl bg-white text-emerald-900 font-bold text-sm hover:bg-emerald-50 transition-all shadow-lg flex items-center gap-2">
+                            <span>Take The Mirror Test</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#opportunities" class="px-7 py-3.5 rounded-xl bg-emerald-800/60 hover:bg-emerald-800 text-white border border-emerald-400/30 font-bold text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-emerald-300"></i>
+                            <span>Find Action Near You</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats Card Grid -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border-t-4 border-emerald-500">
+                        <p class="text-3xl font-extrabold text-emerald-700">~2,400</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">Charlotteans Experiencing Homelessness Daily</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border-t-4 border-emerald-500">
+                        <p class="text-3xl font-extrabold text-emerald-700">30% AMI</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">Critical Housing Deficit Threshold</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border-t-4 border-emerald-500">
+                        <p class="text-3xl font-extrabold text-emerald-700">500+</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">Roof Above Permanent Units</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border-t-4 border-emerald-500">
+                        <p class="text-3xl font-extrabold text-emerald-700">1 Goal</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">A Home For All Ecosystem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Mirror Test Section -->
+    <section id="mirror-test" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 font-bold text-sm uppercase tracking-wider">Internal Readiness Assessment</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">The Mirror Test</h2>
+                <p class="text-slate-600 mt-4 text-base leading-relaxed">
+                    Before jumping in, social innovation requires looking inward. Evaluate your mindset across 4 vital dimensions to understand how you can best contribute to systemic change in Charlotte.
+                </p>
+            </div>
+
+            <!-- Quiz Component -->
+            <div class="bg-slate-50 border border-emerald-100 rounded-3xl p-6 sm:p-10 shadow-lg" id="quiz-container">
+                <!-- Progress bar -->
+                <div class="w-full bg-slate-200 h-2.5 rounded-full mb-8 overflow-hidden">
+                    <div id="quiz-progress" class="bg-emerald-600 h-full w-1/4 transition-all duration-500"></div>
+                </div>
+
+                <!-- Questions Container -->
+                <div id="quiz-step-1" class="quiz-step">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">1</span>
+                        <h3 class="text-xl font-bold text-slate-900">The Root Cause Check</h3>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        Are you ready to shift focus from short-term charity (handing out blankets, temporary shelters) to fighting systemic drivers like exclusionary zoning, housing trust fund advocacy, and wage stagnation?
+                    </p>
+                    <div class="space-y-3">
+                        <button onclick="answerQuiz(1, 'systemic')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>Yes, I am prepared to fight for zoning reform and legislative budget allocations.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                        <button onclick="answerQuiz(1, 'direct')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>I prefer hands-on direct service (serving meals, volunteering at centers).</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-step-2" class="quiz-step hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">2</span>
+                        <h3 class="text-xl font-bold text-slate-900">The Ego Check</h3>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        Charlotte has established initiatives like <i>Roof Above</i> and the citywide <i>A Home for All</i> framework. Are you willing to align your energy with existing organizations rather than starting a brand new non-profit?
+                    </p>
+                    <div class="space-y-3">
+                        <button onclick="answerQuiz(2, 'partner')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>Yes, I want to elevate, fund, and scale teams that have been doing this work for decades.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                        <button onclick="answerQuiz(2, 'founder')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>I feel strongly about pioneering a new independent initiative or program.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-step-3" class="quiz-step hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">3</span>
+                        <h3 class="text-xl font-bold text-slate-900">The Reality Check</h3>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        High-density permanent supportive housing often faces intense NIMBY backlash in neighborhoods like Dilworth, Myers Park, or SouthPark. Can you stomach political friction and community pushback?
+                    </p>
+                    <div class="space-y-3">
+                        <button onclick="answerQuiz(3, 'resilient')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>Yes, I have the stamina to advocate publicly at zoning and city council hearings.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                        <button onclick="answerQuiz(3, 'behind_scenes')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>I would rather work on data analysis, technology, or behind-the-scenes support.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-step-4" class="quiz-step hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">4</span>
+                        <h3 class="text-xl font-bold text-slate-900">The Long-term Resilience Check</h3>
+                    </div>
+                    <p class="text-slate-700 mb-6 leading-relaxed">
+                        Housing First provides unconditional housing. Progress can be non-linear and human trauma is complex. Are you committed for the long haul, even when results take years?
+                    </p>
+                    <div class="space-y-3">
+                        <button onclick="answerQuiz(4, 'decade')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>Yes, I view this as a decade-long commitment to institutional change.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                        <button onclick="answerQuiz(4, 'seasonal')" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/50 transition-all font-medium flex justify-between items-center group">
+                            <span>I want to contribute in targeted bursts or flexible project scopes.</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-emerald-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Results -->
+                <div id="quiz-result" class="hidden text-center py-6">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900" id="result-title">Assessment Complete</h3>
+                    <p class="text-slate-600 mt-2 max-w-lg mx-auto" id="result-desc">
+                        Based on your responses, you are best suited for strategic systemic advocacy and data-driven partnership with Charlotte's existing networks!
+                    </p>
+                    <div class="mt-8 flex justify-center gap-4">
+                        <a href="#opportunities" class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-all">
+                            View Matched Opportunities
+                        </a>
+                        <button onclick="resetQuiz()" class="px-6 py-3 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-100 transition-all">
+                            Retake Assessment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI & Systems Strategy Section -->
+    <section id="ai-strategy" class="py-20 bg-emerald-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 font-bold text-sm uppercase tracking-wider">Technology & Innovation</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">How AI Multiplies Impact in Charlotte</h2>
+                <p class="text-emerald-100/80 mt-4 text-base">
+                    AI isn't a replacement for housing—it is an intelligence layer that optimizes resource allocation, streamlines zoning reviews, and predicts risk before eviction occurs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Strategy 1 -->
+                <div class="bg-emerald-800/50 border border-emerald-700/50 rounded-2xl p-8 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Predictive Eviction Prevention</h3>
+                    <p class="text-emerald-100/70 text-sm leading-relaxed">
+                        Analyzing localized utility data, rent-to-income spikes, and emergency relief applications to deploy micro-grants *before* families enter the court system.
+                    </p>
+                </div>
+
+                <!-- Strategy 2 -->
+                <div class="bg-emerald-800/50 border border-emerald-700/50 rounded-2xl p-8 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Zoning & Parcel Intelligence</h3>
+                    <p class="text-emerald-100/70 text-sm leading-relaxed">
+                        Using computer vision and GIS mapping across Mecklenburg County to automatically identify underutilized land suitable for rapid supportive housing development.
+                    </p>
+                </div>
+
+                <!-- Strategy 3 -->
+                <div class="bg-emerald-800/50 border border-emerald-700/50 rounded-2xl p-8 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Unified Shelter Coordination</h3>
+                    <p class="text-emerald-100/70 text-sm leading-relaxed">
+                        Connecting real-time bed availability across Roof Above, Salvation Army Center of Hope, and regional providers to reduce wait times to zero.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map & Local Opportunities -->
+    <section id="opportunities" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-emerald-600 font-bold text-sm uppercase tracking-wider">Local Action Center</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-2">Get Involved Near You</h2>
+                    <p class="text-slate-600 mt-2">Filter opportunities by Charlotte neighborhood and impact type.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterOpportunities('all')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow-sm" data-filter="all">All CLT</button>
+                    <button onclick="filterOpportunities('uptown')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-emerald-50" data-filter="uptown">Uptown / South End</button>
+                    <button onclick="filterOpportunities('west')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-emerald-50" data-filter="west">West End / Freedom Dr</button>
+                    <button onclick="filterOpportunities('east')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-emerald-50" data-filter="east">East Charlotte</button>
+                </div>
+            </div>
+
+            <!-- Opportunity Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="opportunity-grid">
+                
+                <!-- Card 1 -->
+                <div class="opportunity-card bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-area="uptown">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Roof Above Partnership</span>
+                            <span class="text-xs text-slate-400 font-medium"><i class="fa-solid fa-location-dot text-emerald-500 mr-1"></i>Uptown Campus</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Meal Preparation & Community Engagement</h3>
+                        <p class="text-slate-600 text-sm mb-4">Serve hot meals and support daytime resource services for men experiencing homelessness in central Charlotte.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Every Tuesday & Thursday</span>
+                        <button onclick="openActionModal('Meal Prep & Service', 'Roof Above')" class="text-xs font-bold text-emerald-600 hover:text-emerald-700">Sign Up <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="opportunity-card bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-area="west">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800">Policy Advocacy</span>
+                            <span class="text-xs text-slate-400 font-medium"><i class="fa-solid fa-location-dot text-emerald-500 mr-1"></i>West Charlotte</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Zoning & Affordable Housing Advocacy</h3>
+                        <p class="text-slate-600 text-sm mb-4">Join neighborhood coalition meetings to advocate for Unified Development Ordinance (UDO) affordable housing allowances.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Monthly City Council Nights</span>
+                        <button onclick="openActionModal('Zoning Advocacy', 'CLT Housing Coalition')" class="text-xs font-bold text-emerald-600 hover:text-emerald-700">Join Coalition <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="opportunity-card bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-area="east">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-800">Family Support</span>
+                            <span class="text-xs text-slate-400 font-medium"><i class="fa-solid fa-location-dot text-emerald-500 mr-1"></i>East Charlotte</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Salvation Army Center of Hope Support</h3>
+                        <p class="text-slate-600 text-sm mb-4">Provide childcare, tutoring, or administrative support for women and children currently staying in transitional shelter spaces.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Weekend Shifts Available</span>
+                        <button onclick="openActionModal('Center of Hope Support', 'Salvation Army')" class="text-xs font-bold text-emerald-600 hover:text-emerald-700">Volunteer <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Charlotte Ecosystem Partners Section -->
+    <section id="impact" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-emerald-600 font-bold text-sm uppercase tracking-wider">Collective Alignment</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Charlotte Ecosystem Leadership</h2>
+                <p class="text-slate-600 mt-3">We build upon, support, and collaborate with existing long-term leaders across Mecklenburg County.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900">Roof Above</h4>
+                    <p class="text-xs text-slate-500 mt-2">Operating 500+ permanent supportive housing units under Housing First.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900">A Home For All</h4>
+                    <p class="text-xs text-slate-500 mt-2">Mecklenburg County's comprehensive strategy to make homelessness rare & brief.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900">Urban Ministry Alliance</h4>
+                    <p class="text-xs text-slate-500 mt-2">Providing street outreach, medical care, and basic needs since 1994.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900">CLT Housing Trust Fund</h4>
+                    <p class="text-xs text-slate-500 mt-2">Municipal funding financing deeply affordable developments under 30% AMI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-900 font-bold text-sm">
+                            CLT
+                        </div>
+                        <span class="text-lg font-bold text-white">HomeFront CLT Initiative</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2">Dedicated to systemic reform, AI optimization, and collaborative housing solutions in Charlotte, NC.</p>
+                </div>
+                <div class="text-xs text-slate-400">
+                    &copy; 2026 HomeFront CLT. Built for community impact.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Volunteer / Action Modal -->
+    <div id="action-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeActionModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="text-xl font-bold text-slate-900" id="modal-title">Get Involved</h3>
+            <p class="text-sm text-slate-500 mt-1" id="modal-org">Organization Partner</p>
+
+            <form onsubmit="submitActionForm(event)" class="mt-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+                    <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+                    <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Charlotte Zip Code</label>
+                    <input type="text" required placeholder="28202" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 transition-all">
+                    Confirm Participation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donate-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeDonateModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl mb-3">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Direct Ecosystem Donation</h3>
+                <p class="text-xs text-slate-500 mt-1">100% of proceeds go directly to Charlotte permanent supportive housing developments.</p>
+            </div>
+
+            <div class="mt-6 grid grid-cols-3 gap-3">
+                <button onclick="selectDonateAmount(25)" class="donate-amt-btn p-3 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-emerald-500 hover:text-emerald-700 text-sm">$25</button>
+                <button onclick="selectDonateAmount(50)" class="donate-amt-btn p-3 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-emerald-500 hover:text-emerald-700 text-sm">$50</button>
+                <button onclick="selectDonateAmount(100)" class="donate-amt-btn p-3 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-emerald-500 hover:text-emerald-700 text-sm">$100</button>
+            </div>
+
+            <form onsubmit="submitDonateForm(event)" class="mt-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Custom Amount ($)</label>
+                    <input type="number" id="custom-donate" placeholder="Or enter custom amount" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 transition-all shadow-md">
+                    Proceed to Direct Contribution
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-emerald-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-32 transition-transform duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <span id="toast-message" class="text-sm font-medium">Action submitted successfully!</span>
+    </div>
+
+    <!-- Application JavaScript -->
+    <script>
+        // Quiz Logic
+        let quizState = {
+            step: 1,
+            answers: []
+        };
+
+        function answerQuiz(step, answer) {
+            quizState.answers.push(answer);
+            document.getElementById(`quiz-step-${step}`).classList.add('hidden');
+            
+            if (step < 4) {
+                quizState.step++;
+                document.getElementById(`quiz-step-${quizState.step}`).classList.remove('hidden');
+                document.getElementById('quiz-progress').style.width = `${(quizState.step / 4) * 100}%`;
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-progress').style.width = `100%`;
+            const resultElem = document.getElementById('quiz-result');
+            const titleElem = document.getElementById('result-title');
+            const descElem = document.getElementById('result-desc');
+
+            const isSystemic = quizState.answers[0] === 'systemic';
+            const isPartner = quizState.answers[1] === 'partner';
+
+            if (isSystemic && isPartner) {
+                titleElem.innerText = "Systemic Ecosystem Partner";
+                descElem.innerText = "You have the ideal mindset for long-term impact in Charlotte! You are ready to engage in zoning board advocacy, policy, and backing existing partners like Roof Above.";
+            } else {
+                titleElem.innerText = "Community Action Champion";
+                descElem.innerText = "Your dedication to hands-on support is vital. Direct service and targeted project support keep our shelters and community programs strong while systemic solutions build.";
+            }
+
+            resultElem.classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            quizState = { step: 1, answers: [] };
+            document.getElementById('quiz-result').classList.add('hidden');
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`quiz-step-${i}`).classList.add('hidden');
+            }
+            document.getElementById('quiz-step-1').classList.remove('hidden');
+            document.getElementById('quiz-progress').style.width = `25%`;
+        }
+
+        // Filtering Opportunities
+        function filterOpportunities(area) {
+            const cards = document.querySelectorAll('.opportunity-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === area) {
+                    btn.className = "filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow-sm";
+                } else {
+                    btn.className = "filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-emerald-50";
+                }
+            });
+
+            cards.forEach(card => {
+                if (area === 'all' || card.getAttribute('data-area') === area) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Action Modal
+        function openActionModal(title, org) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-org').innerText = `Partner: ${org}`;
+            document.getElementById('action-modal').classList.remove('hidden');
+        }
+
+        function closeActionModal() {
+            document.getElementById('action-modal').classList.add('hidden');
+        }
+
+        function submitActionForm(e) {
+            e.preventDefault();
+            closeActionModal();
+            showToast("Thank you for getting involved! We'll reach out shortly.");
+        }
+
+        // Donate Modal
+        function openDonateModal() {
+            document.getElementById('donate-modal').classList.remove('hidden');
+        }
+
+        function closeDonateModal() {
+            document.getElementById('donate-modal').classList.add('hidden');
+        }
+
+        function selectDonateAmount(amt) {
+            document.getElementById('custom-donate').value = amt;
+        }
+
+        function submitDonateForm(e) {
+            e.preventDefault();
+            closeDonateModal();
+            showToast("Thank you for supporting Charlotte's systemic housing initiative!");
+        }
+
+        // Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
